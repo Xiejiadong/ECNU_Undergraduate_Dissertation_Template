@@ -27,3 +27,5 @@
 * algorithm相关的所有 sty 用于支持伪代码
 * intros/preli.tex 正文部分的示例
 * simsun.ttc 宋体字体
+
+更多关于其他 Latex 书写的细节可以参考 [programokey](https://github.com/programokey/ECNUUndergraduateDissertationTemplate) 的版本
