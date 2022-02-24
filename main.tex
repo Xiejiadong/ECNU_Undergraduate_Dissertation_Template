@@ -1,0 +1,43 @@
+\documentclass[a4paper,oneside,UTF8]{article} %A4纸，单面，UTF-8
+
+\input{packages_and_settings.tex} %加载各宏包以及本模板的主要设置
+\addbibresource{ref.bib} %加载bib文件（参考文献）
+
+\begin{document}
+\pagestyle{empty} %不对正文前的各页面使用页眉页脚
+
+\input{inner-cover.tex} %插入内封面
+\input{sign.tex} %插入签名页面
+
+\tableofcontents %生成目录
+
+\clearpage
+\pagestyle{fancy} %开始使用页眉页脚
+
+\input{abstract.tex} %生成中英文摘要及关键词
+
+
+\clearpage
+\setcounter{page}{1} %论文页码从正文开始记数
+
+\input{intros.tex}
+\input{preli.tex}
+
+\cleardoublepage                                      %
+\phantomsection                                       %生成参考文献
+\addcontentsline{toc}{section}{参考文献}               %
+\printbibliography[title={\centering \heiti \zihao {-3}参考文献}] %
+
+\clearpage                                       %
+
+
+
+% \begin{appendices}                               %
+% \renewcommand{\thesection}{\chinese{section}}  %生成附录
+% \input{./ending/Appendix.tex}                    %
+% \end{appendices}                                 %
+
+% \clearpage                           %生成感谢
+% \input{./ending/acknowledgement.tex} %
+
+\end{document}

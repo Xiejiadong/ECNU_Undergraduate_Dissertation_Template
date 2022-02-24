@@ -1,0 +1,66 @@
+%% Last Modified: Fri Oct 12 16:35:03 2007.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{weiwAlgorithm}
+\typeout{Document Style `weiw_Algorithm - Enhanced algorithm support (ver 0.999)}
+
+%% fix the algorithm2e class if not using the standard article class
+%% c.f., http://groups.google.com/group/comp.text.tex/browse_thread/thread/9cfe3c30f0bd519b/a3ff89cb09131e0b?lnk=gst&q=algorithm2e#a3ff89cb09131e0b
+%\makeatletter
+\newif\if@restonecol
+%\makeatother
+\let\algorithm\relax
+\let\endalgorithm\relax 
+
+
+\RequirePackage[
+algoruled,
+longend,
+linesnumbered,
+lined
+]{algorithm2e}
+
+
+
+%% algorithm2e has several package options. Some relevant ones are:
+%% - longend / *shortend* / noend
+%% - boxed / boxruled / ruled / algoruled / *plain*
+%% - linesnumbered / linesnumberedhidden 
+%% - lined / vlined / noline
+%%
+
+%% a few useful macros defined in the package
+%%
+%% - \nllable{label}, ^\nl, ^lnl{label}
+
+%% \tcc{}
+
+%\newcommand{\myor}{\textbf{or}}
+\SetKw{OR}{or}
+\SetKw{AND}{and}
+\SetKw{NOT}{not}
+
+% the default [longend] texts really suck, so here are my definitions
+\SetKwIF{gIf}{gElsIf}{gElse}{if}{then}{else if}{else}{end if}%
+\SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}%
+\SetKwSwitch{Case}{When}{Other}{case}{do}{when}{otherwise}{end case}%
+\SetKwFor{For}{for}{do}{end for}%
+\SetKwFor{ForPar}{for}{do in parallel}{end for}
+\SetKwFor{ForEach}{for each}{do}{end for}%
+\SetKwFor{ForAll}{forall}{do}{end for}%
+\SetKwFor{While}{while}{do}{end while}%
+
+%% useful commands
+\newcommand{\State}[1]{#1\;}
+\newcommand{\StateCmt}[2]{% statement (#1) with comment (#2)
+  #1;\quad\tcc*[f]{#2}\;
+}
+%% this command is not well implemented (buggy or ugly)
+\newcommand{\CmtState}[2]{% comment (#2) and then statement (#1)
+  \tcc*[f]{#2} #1\;
+}
+
+
+%% global (default) setting
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}

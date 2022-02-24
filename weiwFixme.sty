@@ -1,0 +1,45 @@
+% My macro packages for LaTeX-2e
+% Copyright -- 2007 Wei Wang
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{weiwFixme}
+\typeout{Document Style `weiwFixme' - support the `\backslash{}fixme' macro by weiw (ver 0.99)}
+
+%% packages
+\RequirePackage{color,xcolor}
+\RequirePackage{tocloft}
+
+\newcommand{\listfixmename}{List of FIXMEs}
+\newlistof{fixme}{fxm}{\listfixmename}
+
+\newcommand{\fixme}[1]{%
+  \refstepcounter{fixme}
+  \footnote{\textbf{FIXME!!!} #1}%
+  \addcontentsline{fxm}{fixme}{\protect\numberline{\thefixme}#1}\par%
+}
+
+\newcommand{\listoffixmes}{
+  {\color{red}\listoffixme}
+}
+
+
+
+% % %% Macros adapted from
+% % http://www.fauskes.net/pgftikzexamples/todo-notes/ (not very good
+% % as there is no counter implemented)
+% \newcommand\listoffixmes{%
+%   \section*{Fixme list} {\color{red}\@starttoc{fxm}}%
+% }
+
+% %\def\l@fixme{\@dottedtocline{1}{1.0em}{3.5em}}
+
+% \newcommand\l@fixme[2]{%
+% %  \par\noindent \textit{#2}:\dotfill\parbox{.8\linewidth}{#1}\par%
+%   \par\noindent \textit{#2}:\dotfill{#1}\par\vskip 2ex%
+% } 
+
+% \newcommand{\fixme}[1]{%
+%   % Add to fixme list
+%   \addcontentsline{fxm}{fixme}{\protect{#1}}%
+%   \footnote{\textbf{FIXME!!!} #1}%
+% }

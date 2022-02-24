@@ -1,0 +1,34 @@
+\section{问题定义}
+
+\begin{algorithm}[t]
+    \SetVline % save space
+    \SetFuncSty{textsf}
+    \SetArgSty{textsf}
+	\caption{CoreDecomp($G,D$)}
+	\label{algo:cd}
+	\Input{a graph $G$, a set $D$ of collapsed vertices}
+	\Output{$c^D(u,G)$ for each $u\in V(G) \setminus D$}
+    	\ForEach{$u\in D$}
+    	{
+    	    \ForEach{$v\in N(u,G)$}
+    	    {
+    	        \State{$d(v)\leftarrow d(v)-1$}
+    	    }
+    	    \State{remove $u$ and its incident edges from $G$}
+    	}
+    	\State{$k\leftarrow 1$}
+    	\While{exist vertices in $V(G)  \setminus D$}
+    	{
+    	    \While{$\exists u\in V(G)  \setminus D$ with $d(u) < k$}
+    	    {
+    	        \ForEach{$v\in N(u,G)$}
+    	        {
+    	            \State{$d(v)\leftarrow d(v)-1$}
+    	        }
+    	        \State{remove $u$ and its incident edges from $G$}
+    	        \State{$c^D(u,G)\leftarrow k-1$}
+    	    }
+    	    \State{$k\leftarrow k+1$}
+    	}
+    	\Return{$c^D(u,G)$ for each $u\in V(G)  \setminus D$}
+\end{algorithm}
