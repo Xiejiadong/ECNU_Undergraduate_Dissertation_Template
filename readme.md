@@ -1,4 +1,4 @@
-# ECNUU ndergraduate Dissertation Template
+# ECNU Undergraduate Dissertation Template
 
 ## 华东师范大学本科生毕业论文模板
 
