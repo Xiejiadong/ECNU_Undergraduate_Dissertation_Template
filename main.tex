@@ -1,5 +1,9 @@
 \documentclass[a4paper,oneside,UTF8]{article} %A4纸，单面，UTF-8
 
+
+\newcommand{\kc}{$k$-核}
+
+
 \input{packages_and_settings.tex} %加载各宏包以及本模板的主要设置
 \addbibresource{ref.bib} %加载bib文件（参考文献）
 
@@ -14,10 +18,14 @@
 \clearpage
 \pagestyle{fancy} %开始使用页眉页脚
 
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
 \input{abstract.tex} %生成中英文摘要及关键词
 
 
 \clearpage
+\pagenumbering{arabic}
 \setcounter{page}{1} %论文页码从正文开始记数
 
 \input{intros.tex}
