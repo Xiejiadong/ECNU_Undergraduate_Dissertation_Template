@@ -1,6 +1,6 @@
 # ECNU Undergraduate Dissertation Template
 
-## 华东师范大学本科生毕业论文模板
+## 华东师范大学本科生（理工科）毕业论文模板
 
 本模版通过修改来自于 [programokey](https://github.com/programokey/ECNUUndergraduateDissertationTemplate) 的版本，主要实现了以下功能：
 
