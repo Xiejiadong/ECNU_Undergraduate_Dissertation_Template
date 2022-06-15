@@ -37,9 +37,9 @@
 \linespread{1.5} %1.5倍行距
 
 \showboxdepth=5
-\showboxbreadth=5 
+\showboxbreadth=5
 
-\setcounter{secnumdepth}{5}                         
+\setcounter{secnumdepth}{5}
 
 \ctexset { section = {format={ \heiti \zihao {-4}} } }         %
 \ctexset { subsection = {format={ \heiti \zihao {-4}} } } %设置各级系统的编号格式
@@ -80,7 +80,7 @@
   \makebox[0pt][r]{\theenmark. \rule{0pt}{\dimexpr\ht\strutbox+\baselineskip}}  %
 }                                                                               %
 \renewcommand\makeenmark{\textsuperscript{[尾注\theenmark]}}                    %
-\usepackage{footnotebackref}  
+\usepackage{footnotebackref}
 
 
 \newtheorem{theorem}{\heiti 定理}[section]      %
@@ -122,5 +122,3 @@
 \newcommand{\apdx}[1] { %
 \clearpage              %重定义生成附录的命令，使得每个附录都单独成页
 \section{#1}}           %
-
-
