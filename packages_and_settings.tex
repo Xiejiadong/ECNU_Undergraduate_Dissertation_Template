@@ -13,16 +13,40 @@
 \usepackage{caption} %实现图片的多行说明
 \usepackage{float} %图片与表格的更好排版
 \usepackage{fontspec}
+% \usepackage{ccaption}
 \usepackage{xeCJK}
-\usepackage{subfigure}
+%\usepackage{subfigure}
 \usepackage{multirow}
+\usepackage{CJKulem}
 \usepackage{weiwAlgorithm}
 \usepackage{algorithmicx}
 \usepackage{lineno,hyperref}
 \usepackage{comment}
 \usepackage{ulem} %for sout
+\usepackage{bicaption}
+\usepackage{tocloft}
+\captionsetup[figure][bi-second]{name=Figure} %设置图的英文编号前缀
+\captionsetup[table][bi-second]{name=Table} %设置表的英文编号前缀W
 
 \usepackage{ulem} %更好的下划线
+
+\renewcommand{\cftsecfont}{\bfseries\songti}
+% \usepackage{titlesec}
+% \usepackage{titletoc}
+
+% \titlecontents{section}
+%               [3cm]
+%               {\bf \large}%
+%               {\contentslabel{2.5em}}%
+%               {}%
+%               {\titlerule*[0.5pc]{$\cdot$}\contentspage\hspace*{3cm}}%
+
+%\usepackage{caption}
+\usepackage{subcaption}
+
+%\captionsetup{font={normalsize}}
+%\captionsetup[sub]{font={normalsize}}
+
 
 \usepackage[ top=2.5cm, bottom=2.0cm, left=3.0cm, right=2.0cm]{geometry} %设置页边距
 
@@ -37,9 +61,9 @@
 \linespread{1.5} %1.5倍行距
 
 \showboxdepth=5
-\showboxbreadth=5
+\showboxbreadth=5 
 
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{5}                         
 
 \ctexset { section = {format={ \heiti \zihao {-4}} } }         %
 \ctexset { subsection = {format={ \heiti \zihao {-4}} } } %设置各级系统的编号格式
@@ -47,7 +71,7 @@
 \ctexset { paragraph = {format={\heiti \zihao {-4}} } }               %
 \ctexset { subparagraph = {format={\heiti \zihao {-4}} } }           %
 
-% \ctexset { section = { name={,、},number={\chinese{section}},format={ \heiti \zihao {-4}} } }         %
+\ctexset { section = { name={,、},format={ \heiti \zihao {-4}} } }         %
 % \ctexset { subsection = { name={（,）},number={\chinese{subsection}},format={ \heiti \zihao {-4}} } } %设置各级系统的编号格式
 % \ctexset { subsubsection = { name={,.},number={\arabic{subsubsection}},format={\heiti \zihao {-4}} } }          %
 % \ctexset { paragraph = { name={（,）},number={\arabic{paragraph}},format={\heiti \zihao {-4}} } }               %
@@ -80,7 +104,7 @@
   \makebox[0pt][r]{\theenmark. \rule{0pt}{\dimexpr\ht\strutbox+\baselineskip}}  %
 }                                                                               %
 \renewcommand\makeenmark{\textsuperscript{[尾注\theenmark]}}                    %
-\usepackage{footnotebackref}
+\usepackage{footnotebackref}  
 
 
 \newtheorem{theorem}{\heiti 定理}[section]      %
@@ -111,10 +135,17 @@
 \usepackage[bibstyle=gb7714-2015,citestyle=gb7714-2015,hyperref=true,backend=biber,sorting=none,gbpub=false]{biblatex}
 %\usepackage[bibstyle=gb7714-2015,citestyle=gb7714-2015,hyperref=true,backend=biber,sorting=none]{biblatex} %使用biblatex管理文献，输出格式使用gb7714-2015标准，后端为biber
 
+% \usepackage{titletoc}
+% \titlecontents{section}[0pt]{\addvspace{2pt}\filright}
+% {\contentspush{\thecontentslabel\ }}
+% {}{\titlerule*[8pt]{.}\contentspage}
+
 \usepackage{titletoc}
-\titlecontents{section}[0pt]{\addvspace{2pt}\filright}
+\titlecontents{section}[0pt]
+{\addvspace{2pt}\filright \heiti}
 {\contentspush{\thecontentslabel\ }}
-{}{\titlerule*[8pt]{.}\contentspage}
+{}
+{\titlerule*[8pt]{.}\contentspage}
 
 \usepackage[titletoc,title]{appendix} %提供了附录支持并显示在目录中
 \renewcommand{\appendixtocname}{附录} %
@@ -122,3 +153,5 @@
 \newcommand{\apdx}[1] { %
 \clearpage              %重定义生成附录的命令，使得每个附录都单独成页
 \section{#1}}           %
+
+
